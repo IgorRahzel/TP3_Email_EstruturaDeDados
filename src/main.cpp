@@ -5,7 +5,7 @@
 int main(int argc,char **argv){
 
     fstream file;
-    fstream file2;
+    //fstream file2;
 
     string input_file; 
     string output_file; 
@@ -36,13 +36,13 @@ int main(int argc,char **argv){
         }
     }
 
-    file >> size;
-    hash.Build(size);
 
-    
-
-    file.open(input_file,ios::out);
+    cout<< input_file << " " << output_file << endl;
+    file.open(input_file,ios::in);
     if(file.is_open()){
+        file >> size;
+        cout << size << endl;
+        hash.Build(size);
         while(file >> input){
             if (input.compare("ENTREGA")==0)
             {
@@ -52,28 +52,28 @@ int main(int argc,char **argv){
 
                 for (int i = 0; i < msg_size; i++)
                 {
-                    file >> noskipws >> input;
+                    file >> input;
                     input_aux +=input;
-
-                    if(input.compare(" ")==0){
-                        i--;
+                    if(i<msg_size-1){
+                        input_aux += " ";
                     }
+                    
                 }
                 aux.setMSG(input_aux);
                 hash.Insert(aux);
-                file2 << "OK: MENSAGEM " << mail_id << " PARA " << user_id  << " ARMAZENADA EM " << user_id%size << endl;
+                cout << "OK: MENSAGEM " << mail_id << " PARA " << user_id  << " ARMAZENADA EM " << user_id % size << endl;
             }
             else if (input.compare("CONSULTA")==0)
             {
                 file >> user_id >> mail_id;
                 check = hash.Search(user_id,mail_id);
-                file2 << "CONSULTA " << user_id << mail_id << ": " << check.getMSG() << endl;
+                cout << "CONSULTA " << user_id << mail_id << ": " << check.getMSG() << endl;
             }
             else if (input.compare("APAGA")==0)
             {
                 file >> user_id >> mail_id;
                 hash.Remove(user_id,mail_id);
-                file2 << "OK: MENSAGEM APAGADA" << endl;
+                cout << "OK: MENSAGEM APAGADA" << endl;
             }
             
         }
