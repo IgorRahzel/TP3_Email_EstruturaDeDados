@@ -22,6 +22,8 @@ int main(int argc,char **argv){
     int mail_id;
     int msg_size;
 
+    bool msg_deleted;
+
     while((option_val = getopt(argc,argv,"i:o:"))!= -1){
         switch (option_val)
         {
@@ -73,13 +75,23 @@ int main(int argc,char **argv){
             {
                 file >> user_id >> mail_id;
                 check = hash.Search(user_id,mail_id);
-                file2 << "CONSULTA " << user_id << " "<<mail_id << ": " << check.getMSG() << endl;
+                if(check.getID() == -1){
+                    file2 << "CONSULTA " << user_id << " " << mail_id <<": MENSAGEM INEXISTENTE" << endl;
+                }
+                else{
+                    file2 << "CONSULTA " << user_id << " "<<mail_id << ": " << check.getMSG() << endl;
+                }
             }
             else if (input.compare("APAGA")==0)
             {
                 file >> user_id >> mail_id;
-                hash.Remove(user_id,mail_id);
-                file2 << "OK: MENSAGEM APAGADA" << endl;
+                msg_deleted = hash.Remove(user_id,mail_id);
+                if(msg_deleted == true){
+                    file2 << "OK: MENSAGEM APAGADA" << endl;
+                }
+                else{
+                    file2 << "ERRO: MENSAGEM INEXISTENTE" << endl;
+                }
             }
             
         }

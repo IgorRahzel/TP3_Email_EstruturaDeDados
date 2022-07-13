@@ -12,7 +12,7 @@ class Hash{
         void Build(int size);
         Email Search(int user_id,int mail_id);
         void Insert(Email email);
-        void Remove(int user_id,int mail_id);
+        bool Remove(int user_id,int mail_id);
 };
 
 #endif

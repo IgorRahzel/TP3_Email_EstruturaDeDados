@@ -42,13 +42,14 @@ Email BST::_Search(Node* node, int id){
 
 }
 
-void BST::Remove(int id) {
+bool BST::Remove(int id) {
     return _Remove(root,id);
 }
 
-void BST::_Remove(Node* &node, int id){
+bool BST::_Remove(Node* &node, int id){
     Node *aux;
     if (node == NULL) {
+        return false;
         throw("Item nao está presente");
     }
     if (id < node->email.getID())
@@ -60,14 +61,17 @@ void BST::_Remove(Node* &node, int id){
             aux = node;
             node = node->left;
             free(aux);
+            return true;
         }
         else if(node->left == NULL) {
             aux = node;
             node = node->right;
             free(aux);
+            return true;
         }
         else
         _Ancestor(node, node->left);
+        return true;
     }
 }
 

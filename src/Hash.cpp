@@ -33,11 +33,13 @@ void Hash::Insert(Email email){
     
 }
 
-void Hash::Remove(int user_id,int mail_id){
-    
-    int pos =  Hash_function(user_id);
-    array[pos].Remove(mail_id);
+bool Hash::Remove(int user_id,int mail_id){
+    bool aux;
 
+    int pos =  Hash_function(user_id);
+    aux = array[pos].Remove(mail_id);
+
+    return aux;
 }
 
 int Hash::Hash_function(int id){
