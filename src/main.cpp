@@ -5,7 +5,7 @@
 int main(int argc,char **argv){
 
     fstream file;
-    //fstream file2;
+    fstream file2;
 
     string input_file; 
     string output_file; 
@@ -37,11 +37,16 @@ int main(int argc,char **argv){
     }
 
 
-    cout<< input_file << " " << output_file << endl;
+    file2.open(output_file,ios::out);
+    
+
+    
+
+    //cout<< input_file << " " << output_file << endl;
     file.open(input_file,ios::in);
-    if(file.is_open()){
+    if(file.is_open() && file2.is_open()){
         file >> size;
-        cout << size << endl;
+        //cout << size << endl;
         hash.Build(size);
         while(file >> input){
             if (input.compare("ENTREGA")==0)
@@ -61,19 +66,20 @@ int main(int argc,char **argv){
                 }
                 aux.setMSG(input_aux);
                 hash.Insert(aux);
-                cout << "OK: MENSAGEM " << mail_id << " PARA " << user_id  << " ARMAZENADA EM " << user_id % size << endl;
+                input_aux.clear();
+                file2 << "OK: MENSAGEM " << mail_id << " PARA " << user_id  << " ARMAZENADA EM " << user_id % size << endl;
             }
             else if (input.compare("CONSULTA")==0)
             {
                 file >> user_id >> mail_id;
                 check = hash.Search(user_id,mail_id);
-                cout << "CONSULTA " << user_id << mail_id << ": " << check.getMSG() << endl;
+                file2 << "CONSULTA " << user_id << " "<<mail_id << ": " << check.getMSG() << endl;
             }
             else if (input.compare("APAGA")==0)
             {
                 file >> user_id >> mail_id;
                 hash.Remove(user_id,mail_id);
-                cout << "OK: MENSAGEM APAGADA" << endl;
+                file2 << "OK: MENSAGEM APAGADA" << endl;
             }
             
         }

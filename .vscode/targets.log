@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 10 21:34:41 2022
+# Make data base, printed on Wed Jul 13 07:25:17 2022
 
 # Variables
 
@@ -63,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/rahzel/.config/Code/CachedData/92d25e35d9bf1a6b16
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.6ZNZO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.MWV5O1
 # default
 .LOADED := 
 # default
@@ -99,7 +99,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 25331
+VSCODE_PID = 3211
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -109,7 +109,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 30)
 OBJ_FOLDER = ./obj/
 # environment
-SESSION_MANAGER = local/rahzel-ThinkPad-L13-Gen-1:@/tmp/.ICE-unix/1844,unix/rahzel-ThinkPad-L13-Gen-1:/tmp/.ICE-unix/1844
+SESSION_MANAGER = local/rahzel-ThinkPad-L13-Gen-1:@/tmp/.ICE-unix/1784,unix/rahzel-ThinkPad-L13-Gen-1:/tmp/.ICE-unix/1784
 # automatic
 *F = $(notdir $*)
 # environment
@@ -161,7 +161,7 @@ SNAP = /snap/code/100
 # makefile (from 'Makefile', line 34)
 MAIN = Main
 # environment
-INVOCATION_ID = f8b5f58bbc014a03b9068853afcd8cd7
+INVOCATION_ID = 2e6bb7b3870c448984b6f204e23eb42c
 # environment
 SNAP_REVISION = 100
 # environment
@@ -199,7 +199,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1887
+SYSTEMD_EXEC_PID = 1830
 # environment
 DISPLAY = :0
 # environment
@@ -215,11 +215,11 @@ SNAP_DATA = /var/snap/code/100
 # environment
 SNAP_CONTEXT = xU2Z8b6nNVON8WEnzpTU9_8J_mS1zz_nhVDrY0F-UNT5ImiIuk7F
 # environment
-MANAGERPID = 1701
+MANAGERPID = 1640
 # environment
 LC_MEASUREMENT = pt_BR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 25282
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3165
 # environment
 _ = /snap/code/100/usr/share/code/code
 # environment
@@ -231,7 +231,7 @@ GDK_PIXBUF_MODULE_FILE = /home/rahzel/snap/code/common/.cache/gdk-pixbuf-loaders
 # environment
 LC_CTYPE = pt_BR.UTF-8
 # environment
-JOURNAL_STREAM = 8:33227
+JOURNAL_STREAM = 8:32288
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -278,7 +278,6 @@ CC = g++
 SNAP_USER_DATA = /home/rahzel/snap/code/100
 # environment
 XDG_MENU_PREFIX = gnome-
- 
 # environment
 GDMSESSION = ubuntu
 # environment
@@ -286,7 +285,7 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=7/186=4%
+# Load=137/1024=13%, Rehash=0, Collisions=6/180=3%
 
 # Pattern-specific Variable Values
 
@@ -294,11 +293,12 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
+ 
 # src (device 66309, inode 3018846): 7 files, no impossibilities.
-# . (device 66309, inode 1976128): 11 files, no impossibilities.
+# . (device 66309, inode 1976128): 12 files, no impossibilities.
 # ./src (device 66309, inode 3018846): 7 files, no impossibilities.
 
-# 25 files, no impossibilities in 3 directories.
+# 26 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -312,9 +312,27 @@ obj/%.o: src/%.cpp
 obj/main.o: src/main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-07-10 21:33:32.213769268
+#  Last modified 2022-07-10 22:26:31.098613305
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/main.o
+# automatic
+# * := main
+# automatic
+# < := src/main.cpp
+# automatic
+# + := src/main.cpp
+# automatic
+# % := 
+# automatic
+# ^ := src/main.cpp
+# automatic
+# ? := src/main.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
 #  recipe to execute (from 'Makefile', line 40):
 	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
 
@@ -328,7 +346,7 @@ Makefile:
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-10 21:33:24.601817264
+#  Last modified 2022-07-10 22:47:59.034319268
 #  File has been updated.
 #  Successfully updated.
 
@@ -371,28 +389,11 @@ src/BST.cpp:
 all: obj/BST.o obj/Email.o obj/Hash.o obj/Node.o obj/main.o
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# * := 
-# automatic
-# < := obj/BST.o
-# automatic
-# + := obj/BST.o obj/Email.o obj/Hash.o obj/Node.o obj/main.o
-# automatic
-# % := 
-# automatic
-# ^ := obj/BST.o obj/Email.o obj/Hash.o obj/Node.o obj/main.o
-# automatic
-# ? := obj/BST.o obj/Email.o obj/Hash.o obj/Node.o obj/main.o
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/20=10%
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 43):
 	$(CC) $(CXXFLAGS) -o $(BIN_FOLDER)$(TARGET) $(OBJ)
 
@@ -421,12 +422,6 @@ src/Hash.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 obj/Email.o: src/Email.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Email'
@@ -444,19 +439,19 @@ src/Node.cpp:
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/47=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 40 / storage = 344 B / avg = 8 B
-# current buf: size = 8162 B / used = 344 B / count = 40 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 41 / storage = 354 B / avg = 8 B
+# current buf: size = 8162 B / used = 354 B / count = 41 / avg = 8 B
 
-# strcache performance: lookups = 56 / hit rate = 28%
+# strcache performance: lookups = 56 / hit rate = 26%
 # hash-table stats:
-# Load=40/8192=0%, Rehash=0, Collisions=0/56=0%
-# Finished Make data base on Sun Jul 10 21:34:42 2022
+# Load=41/8192=1%, Rehash=0, Collisions=0/56=0%
+# Finished Make data base on Wed Jul 13 07:25:17 2022
 
  
