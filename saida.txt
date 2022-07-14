@@ -4,5 +4,5 @@ OK: MENSAGEM 118 PARA 1 ARMAZENADA EM 0
 OK: MENSAGEM 119 PARA 2 ARMAZENADA EM 0
 OK: MENSAGEM 120 PARA 1 ARMAZENADA EM 0
 CONSULTA 1 116: Boa tarde José! Amanhã preciso que você busque uma encomenda na filial da Pampulha.
-CONSULTA 1 117: Boa tarde Antônio! Certo, qual o endereço da loja?
+ERRO: MENSAGEM INEXISTENTE
 CONSULTA 2 117: Boa tarde Antônio! Certo, qual o endereço da loja?

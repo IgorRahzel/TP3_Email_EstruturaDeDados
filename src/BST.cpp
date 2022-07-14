@@ -22,11 +22,11 @@ void BST::_Insert(Node* &p, Email email){
     }
 }
 
-Email BST::Search(int id){
-    return _Search(root,id);
+Email BST::Search(int id,int user_id){
+    return _Search(root,id,user_id);
 }
 
-Email BST::_Search(Node* node, int id){
+Email BST::_Search(Node* node, int id,int user_id){
     Email aux;
 
     if(node == NULL){
@@ -34,44 +34,63 @@ Email BST::_Search(Node* node, int id){
         return aux;
     }
     if(id < node->email.getID())
-        return _Search(node->left,id);
+        return _Search(node->left,id,user_id);
     else if(id > node->email.getID())
-        return _Search(node->right,id);
-    else
-        return node->email;
+        return _Search(node->right,id,user_id);
+    else{
+        if(node->email.getUserID() == user_id)
+            return node->email;
+        else{
+            aux.setID(-1);
+            return aux;
+        }
+    }
+    
 
 }
 
-bool BST::Remove(int id) {
-    return _Remove(root,id);
+bool BST::Remove(int id,int user_id) {
+    return _Remove(root,id,user_id);
 }
 
-bool BST::_Remove(Node* &node, int id){
+bool BST::_Remove(Node* &node, int id,int user_id){
     Node *aux;
     if (node == NULL) {
         return false;
         throw("Item nao está presente");
     }
     if (id < node->email.getID())
-        return _Remove(node->left, id);
+        return _Remove(node->left, id,user_id);
     else if (id>node->email.getID())
-        return _Remove(node->right, id);
+        return _Remove(node->right, id,user_id);
     else {
         if (node->right == NULL) {
-            aux = node;
-            node = node->left;
-            free(aux);
-            return true;
+            if(user_id == node->email.getUserID()){
+                aux = node;
+                node = node->left;
+                free(aux);
+                return true;
+            }
+            else
+                return false;
         }
         else if(node->left == NULL) {
-            aux = node;
-            node = node->right;
-            free(aux);
+            if(user_id == node->email.getUserID()){
+                aux = node;
+                node = node->right;
+                free(aux);
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+        if(user_id == node->email.getUserID()){
+            _Ancestor(node, node->left);
             return true;
         }
         else
-        _Ancestor(node, node->left);
-        return true;
+            return false;
     }
 }
 

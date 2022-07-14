@@ -5,5 +5,5 @@ ENTREGA 1 118 10 Avenida Antônio Carlos, 1000. Chegar lá e procurar por Flávi
 ENTREGA 2 119 5 Ok, estarei lá às 8h.
 ENTREGA 1 120 1 Obrigado.
 CONSULTA 1 116
-CONSULTA 1 117
+APAGA 1 117
 CONSULTA 2 117

@@ -15,7 +15,7 @@ Email Hash::Search(int user_id,int mail_id){
     Email email;
 
     pos = Hash_function(user_id);
-    email = array[pos].Search(mail_id);
+    email = array[pos].Search(mail_id,user_id);
     return email;
 }
 
@@ -37,7 +37,7 @@ bool Hash::Remove(int user_id,int mail_id){
     bool aux;
 
     int pos =  Hash_function(user_id);
-    aux = array[pos].Remove(mail_id);
+    aux = array[pos].Remove(mail_id,user_id);
 
     return aux;
 }
