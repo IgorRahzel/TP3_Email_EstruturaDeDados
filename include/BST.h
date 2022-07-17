@@ -1,3 +1,10 @@
+//---------------------------------------------------------------------
+// Arquivo      : BST.h
+// Conteudo     : Cabeçalho da classe de Arvore Binaria de Pesquisa
+//                  -Assinatura dos metodos de insercao,pesquisa e remocao
+// Autor        : Igor Rahzel Colares Galdino (igorrahzel@ufmg.br)
+//---------------------------------------------------------------------
+
 #ifndef BST_H
 #define BST_H
 #include "Email.h"

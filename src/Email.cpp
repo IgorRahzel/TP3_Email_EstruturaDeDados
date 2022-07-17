@@ -1,3 +1,9 @@
+//---------------------------------------------------------------------
+// Arquivo      : Email.cpp
+// Conteudo     : Implementacao dos metodos da classe Email
+// Autor        : Igor Rahzel Colares Galdino (igorrahzel@ufmg.br)
+//---------------------------------------------------------------------
+
 #include "Email.h"
 
 Email::Email(){}
@@ -26,9 +32,9 @@ void Email::setUserID(int user_id){
     this->user_id = user_id;
 }
 
-
+/*verifica se a funcao esta vazia*/
 bool Email::isEmpty(){
-    if(id == -1)
+    if(id == -1) 
         return true;
     else
         return false;

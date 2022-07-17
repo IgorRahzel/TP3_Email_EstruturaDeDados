@@ -1,3 +1,9 @@
+//---------------------------------------------------------------------
+// Arquivo      : Hash.h
+// Conteudo     : Cabeçalho da classe Hash
+// Autor        : Igor Rahzel Colares Galdino (igorrahzel@ufmg.br)
+//---------------------------------------------------------------------
+
 #ifndef HASH_H
 #define HASH_H
 #include "BST.h"

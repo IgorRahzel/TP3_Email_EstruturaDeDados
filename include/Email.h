@@ -1,3 +1,9 @@
+//---------------------------------------------------------------------
+// Arquivo      : Email.h
+// Conteudo     : Cabeçalho da classe Email
+// Autor        : Igor Rahzel Colares Galdino (igorrahzel@ufmg.br)
+//---------------------------------------------------------------------
+
 #ifndef EMAIL_H
 #define EMAIL_H
 #include <iostream>

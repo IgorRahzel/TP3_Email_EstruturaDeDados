@@ -1,23 +1,31 @@
+//---------------------------------------------------------------------
+// Arquivo      : main.cpp
+// Conteudo     : arquivo principal do projeto
+// Autor        : Igor Rahzel Colares Galdino (igorrahzel@ufmg.br)
+//---------------------------------------------------------------------
+
 #include "Hash.h"
 #include <fstream>
 #include <getopt.h>
 
 int main(int argc,char **argv){
 
-    fstream file;
-    fstream file2;
+    fstream file; /*ler arquivo de entrada*/
+    fstream file2; /*escrever no arquivo de saida*/
 
-    string input_file; 
-    string output_file; 
-    string input;
-    string input_aux;
+    string input_file; /*nome do arquivo de entrada*/
+    string output_file; /*nome do arquivo de saida*/
+    
+    string input; /*ler dados do arquivo*/
+    string input_aux; /*ler partes da mensagem enviada*/
+
     int option_val; /*utilizado para ler parametros da linha de comando*/
 
-    int size;
-    Hash hash;
+    int size; /*tamanho da tabela Hash*/
+    Hash hash; 
 
-    Email aux;
-    Email check;
+    Email aux; /*utilizado para inserir email na tabela Hash*/
+    Email check; /*verificar se email existe*/
     int user_id;
     int mail_id;
     int msg_size;
@@ -39,25 +47,21 @@ int main(int argc,char **argv){
     }
 
 
-    file2.open(output_file,ios::out);
+    file2.open(output_file,ios::out); /*abre arquivo de saida*/
     
 
-    
-
-    //cout<< input_file << " " << output_file << endl;
-    file.open(input_file,ios::in);
+    file.open(input_file,ios::in); /*abre arquivo de entrada*/
     if(file.is_open() && file2.is_open()){
         file >> size;
-        //cout << size << endl;
         hash.Build(size);
         while(file >> input){
-            if (input.compare("ENTREGA")==0)
+            if (input.compare("ENTREGA")==0) /*insere email na tabela*/
             {
                 file >> user_id >> mail_id >> msg_size;
                 aux.setUserID(user_id);
                 aux.setID(mail_id);
 
-                for (int i = 0; i < msg_size; i++)
+                for (int i = 0; i < msg_size; i++) /*ler palavras da mensagem*/
                 {
                     file >> input;
                     input_aux +=input;
@@ -71,7 +75,7 @@ int main(int argc,char **argv){
                 input_aux.clear();
                 file2 << "OK: MENSAGEM " << mail_id << " PARA " << user_id  << " ARMAZENADA EM " << user_id % size << endl;
             }
-            else if (input.compare("CONSULTA")==0)
+            else if (input.compare("CONSULTA")==0) /*pesquisa email na tabela*/
             {
                 file >> user_id >> mail_id;
                 check = hash.Search(user_id,mail_id);
@@ -82,7 +86,7 @@ int main(int argc,char **argv){
                     file2 << "CONSULTA " << user_id << " "<<mail_id << ": " << check.getMSG() << endl;
                 }
             }
-            else if (input.compare("APAGA")==0)
+            else if (input.compare("APAGA")==0) /*remove email da tabela*/
             {
                 file >> user_id >> mail_id;
                 msg_deleted = hash.Remove(user_id,mail_id);
