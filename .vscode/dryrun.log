@@ -4,6 +4,7 @@ g++ -std=c++11 -g -Wall -c src/BST.cpp -o obj/BST.o -I./include/
 g++ -std=c++11 -g -Wall -c src/Email.cpp -o obj/Email.o -I./include/
 g++ -std=c++11 -g -Wall -c src/Hash.cpp -o obj/Hash.o -I./include/
 g++ -std=c++11 -g -Wall -c src/Node.cpp -o obj/Node.o -I./include/
+ 
 g++ -std=c++11 -g -Wall -c src/main.cpp -o obj/main.o -I./include/
 g++ -std=c++11 -g -Wall -o ./bin/tp3.out  ./obj/BST.o  ./obj/Email.o  ./obj/Hash.o  ./obj/Node.o  ./obj/main.o
 make: Leaving directory '/home/rahzel/Desktop/Projetos/TP3_Email_EstruturaDeDados'

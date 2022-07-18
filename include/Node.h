@@ -10,7 +10,6 @@
 
 class Node{
     private:
-        int Node_ID;
         Email email; 
         Node* left;
         Node* right;
